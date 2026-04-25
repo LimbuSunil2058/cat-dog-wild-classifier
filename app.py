@@ -3,18 +3,20 @@ import torch
 import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
-import gdown
+from huggingface_hub import hf_hub_download
 import os
 
 CLASS_NAMES = ['cat', 'dog', 'wild']
 MODEL_PATH  = 'cat_dog_wild_vgg16.pth'
-FILE_ID     = '1UiqsVDzzF8gKnSjX3TrsAkPIzob0zi4G'
 
-# Auto-download model if not present
+# Download model from Hugging Face
 if not os.path.exists(MODEL_PATH):
     with st.spinner('Downloading model weights... please wait ⏳'):
-        url = f'https://drive.google.com/uc?export=download&confirm=t&id={FILE_ID}'
-        gdown.download(url, MODEL_PATH, quiet=False, fuzzy=True)
+        hf_hub_download(
+            repo_id="limbusunil/cat-dog-wild-classifier",  
+            filename="cat_dog_wild_vgg16.pth",
+            local_dir="."
+        )
 
 # Load Model
 @st.cache_resource
@@ -73,14 +75,12 @@ if uploaded_file:
     predicted_class = CLASS_NAMES[torch.argmax(probs).item()]
     confidence      = torch.max(probs).item() * 100
 
-    # Emoji per class
     emoji = {'cat': '🐱', 'dog': '🐶', 'wild': '🐯'}
 
     st.markdown("---")
     st.markdown(f"### {emoji[predicted_class]} Prediction: `{predicted_class.upper()}` ({confidence:.2f}%)")
     st.markdown("---")
 
-    # Probability bars
     st.markdown("#### Confidence per class:")
     for i, class_name in enumerate(CLASS_NAMES):
         st.progress(float(probs[i]), text=f"{emoji[class_name]} {class_name}: {probs[i]*100:.2f}%")
