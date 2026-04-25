@@ -3,9 +3,17 @@ import torch
 import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
+import gdown
+import os
 
 CLASS_NAMES = ['cat', 'dog', 'wild']
 MODEL_PATH  = 'cat_dog_wild_vgg16.pth'
+FILE_ID = '1UiqsVDzzF8gKnSjX3TrsAkPIzob0zi4G'
+
+# Auto-download model if not present
+if not os.path.exists(MODEL_PATH):
+    with st.spinner('Downloading model weights...'):
+        gdown.download(f'https://drive.google.com/uc?id={FILE_ID}', MODEL_PATH, quiet=False)
 
 @st.cache_resource
 def load_model():
@@ -19,7 +27,7 @@ def load_model():
         nn.Dropout(p=0.5),
         nn.Linear(512, 3)
     )
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device('cpu')))  # ✅ fixed
+    model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device('cpu')))
     model.eval()
     return model
 
@@ -44,7 +52,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 
 if uploaded_file:
     image = Image.open(uploaded_file).convert('RGB')
-    st.image(image, caption="Uploaded Image", use_container_width=True)  # ✅ fixed
+    st.image(image, caption="Uploaded Image", use_container_width=True)
 
     model = load_model()
     probs = predict(image, model)
