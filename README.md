@@ -1,10 +1,10 @@
-# 🐱🐶🐯 Cat vs Dog vs Wild Animal Classifier
+#  Cat vs Dog vs Wild Animal Classifier
 
 A deep learning image classifier that can distinguish between **cats**, **dogs**, and **wild animals** with **99.8% accuracy**, built using VGG16 transfer learning and deployed with Streamlit.
 
 ---
 
-## 📸 Demo  https://cat-dog-wild-classifier-7ftns8dco7t74y3fnibcnf.streamlit.app/
+## Demo:[Click Here] (https://cat-dog-wild-classifier-7ftns8dco7t74y3fnibcnf.streamlit.app/)
 
 Upload any image of a cat, dog, or wild animal and the app will:
 - Predict the correct class
