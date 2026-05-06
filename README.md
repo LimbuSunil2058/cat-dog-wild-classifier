@@ -4,7 +4,7 @@ A deep learning image classifier that can distinguish between **cats**, **dogs**
 
 ---
 
-## 📸 Demo
+## 📸 Demo  https://cat-dog-wild-classifier-7ftns8dco7t74y3fnibcnf.streamlit.app/
 
 Upload any image of a cat, dog, or wild animal and the app will:
 - Predict the correct class
