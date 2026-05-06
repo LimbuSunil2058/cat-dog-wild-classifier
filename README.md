@@ -4,8 +4,8 @@ A deep learning image classifier that can distinguish between **cats**, **dogs**
 
 ---
 
-## Demo:[Click Here](https://cat-dog-wild-classifier-7ftns8dco7t74y3fnibcnf.streamlit.app/)
-## 🚀 Live Demo:[Click Here](https://whatsapp-chat-analysis-3rxrchqhawjiysoqgs2kyj.streamlit.app/)
+## Live Demo:  [Click Here](https://cat-dog-wild-classifier-7ftns8dco7t74y3fnibcnf.streamlit.app/)
+
 Upload any image of a cat, dog, or wild animal and the app will:
 - Predict the correct class
 - Show confidence percentage
@@ -13,7 +13,7 @@ Upload any image of a cat, dog, or wild animal and the app will:
 
 ---
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 | Layer | Details |
 |---|---|
@@ -26,7 +26,7 @@ Upload any image of a cat, dog, or wild animal and the app will:
 
 ---
 
-## 📊 Results
+##  Results
 
 | Metric | Score |
 |---|---|
@@ -46,7 +46,7 @@ Upload any image of a cat, dog, or wild animal and the app will:
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 cat-dog-wild-classifier/
@@ -60,7 +60,7 @@ cat-dog-wild-classifier/
 
 ---
 
-## ⚙️ Training Details
+##  Training Details
 
 | Parameter | Value |
 |---|---|
@@ -82,7 +82,7 @@ cat-dog-wild-classifier/
 ---
 
 
-## 📦 Requirements
+##  Requirements
 
 ```
 streamlit
@@ -94,7 +94,7 @@ Pillow
 ---
 
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Python** 3.x
 - **PyTorch** — model training & inference
@@ -105,7 +105,7 @@ Pillow
 
 ---
 
-## 👤 Author
+##  Author
 
 **Sunil Limbu**
 - GitHub: [@LimbuSunil2058](https://github.com/LimbuSunil2058)
